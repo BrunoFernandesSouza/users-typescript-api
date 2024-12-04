@@ -3,10 +3,12 @@ export interface HttpResponse<T> {
   body: T | string;
 }
 
-export interface HttpRequest<B>{
-  params?:any;
-  headers?:any;
+export interface HttpRequest<B> {
+  params?: any;
+  headers?: any;
   body?: B;
+}
 
-
+export interface IController{
+  handle(httpRequest: HttpRequest<unknown>):Promise<HttpResponse<unknown>>
 }
